@@ -2,10 +2,11 @@
   img {
     transition: all 2s linear;
     transform: rotate(0deg)  scale(0.25)  skew(0deg)  translate(0px);
+    will-change:transform;
   }
   img:hover {
     transform: rotate(0deg)  scale(1)  skew(0deg) translate(0px);
   }
 </style>
-<img style="will-change:transform" src="large1.jpg"/>
+<img src="large1.jpg"/>
 <img style="border: 5px solid blue;" src="large2.jpg"/>
