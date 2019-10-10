@@ -1,13 +1,16 @@
 <style>
   img {
     transition: all 2s linear;
-    transform: rotate(0deg)  scale(1)  skew(0deg)  translate(0px);
+    transform: rotate(0deg)  scale(0.25)  skew(0deg)  translate(0px);
     object-fit: fill;
   }
   img:hover {
-    transform: rotate(0deg)  scale(2)  skew(0deg) translate(0px);
+    transform: rotate(0deg)  scale(1)  skew(0deg) translate(0px);
   }
 </style>
 <div style="border:2px blue solid">
 <img style="will-change:transform" src="at-supports-001.png"/>
+</div>
+<div style="border:2px orange solid">
+<img style="object-fit:fill" src="at-supports-001.png"/>
 </div>
