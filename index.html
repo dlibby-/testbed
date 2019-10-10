@@ -8,5 +8,29 @@
     transform: rotate(0deg)  scale(1)  skew(0deg) translate(0px);
   }
 </style>
-<img src="large1.jpg"/>
-<img style="border: 5px solid orange;" src="large2.jpg"/>
+<script>
+  let animatedImg;
+  let start;
+  let scale = 0.25;
+  function startAnimate(image) {
+    animatedImg = image;
+    image.style.transition = "";
+    start = performance.now();
+    requestAnimationFrame(tick);
+  }
+
+  function tick() {
+    let now = performance.now();
+    if (now - start < 2000) {
+      let value = 0.25 + ((now - start) / 2000) * (1 - 0.25);
+      animatedImg.style.transform = "rotate(0deg) scale(" + value + ") skew(0deg) translate(0px)";
+      requestAnimationFrame(tick);
+    } else {
+      animatedImg.style.transform = "rotate(0deg) scale(1) skew(0deg) translate(0px)";
+    }
+  }
+</script>
+<button onclick="alert(startAnimate); startAnimate(img1)">animate1</button>
+<img id="img1" src="large1.jpg"/>
+<button onclick="startAnimate(img2)">animate2</button>
+<img id="img2" style="border: 5px solid orange;" src="large2.jpg"/>
